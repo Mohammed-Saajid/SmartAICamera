@@ -151,7 +151,7 @@ In conclusion, our AI-integrated surveillance camera system marks a significant 
 
 ### Collaborators:
 
-- ASHWINA NARENDRAKUMAR [@ASHWINAKN]
 - ARJUN N S [@NSARJUN]
-- SRI HARISH B [@SRIHARISHB]
+- ASHWINA NARENDRAKUMAR [@ASHWINAKN]
 - MOHAMMED SAAJID S [@MOHAMMED-SAAJID]
+- SRI HARISH B [@SRIHARISHB]
