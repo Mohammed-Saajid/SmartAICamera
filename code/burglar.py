@@ -6,7 +6,7 @@ import numpy as np
 def detect_burglar(frame):
           
     
-    model = YOLO("models/yolo11n.pt")
+    model = YOLO("SmartAICamera\\models\\yolo11n.pt")
     results = model(frame) # Passing frame to model
     for result in results:  # Loop through each detected object
             boxes = result.boxes  # get the boxes attribute
@@ -17,10 +17,11 @@ def detect_burglar(frame):
                 # Extracting Label from predictions.
                 labelname = f"{model.names[int(class_id)]}"
                 label = f"{labelname} {conf.item():.2f}"
-                cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 2)
-                # Write Label on the detected person
-                cv2.putText(frame, label, (int(x1), int(y1) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (36, 255, 12), 2)
-                cv2.imshow("intruder",frame)
+                if labelname.lower()=="person": 
+                     cv2.rectangle(frame, (int(x1), int(y1)), (int(x2), int(y2)), (0, 255, 0), 2)
+                     # Write Label on the detected person
+                     cv2.putText(frame, "Intruder", (int(x1), int(y1) - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 0, 255), 2)
+                     cv2.imshow("intruder",frame)
     cv2.waitKey(0)
     cv2.destroyAllWindows()  
 
@@ -54,8 +55,7 @@ def crop_image(image, pts):
     M = cv2.getPerspectiveTransform(pts, dst)
     cropped = cv2.warpPerspective(image, M, (maxWidth, maxHeight))
     cv2.imshow("Cropped Image",cropped)
-    cv2.waitKey(0)
-    cv2.destroyAllWindows()
+    
 
     return cropped
 

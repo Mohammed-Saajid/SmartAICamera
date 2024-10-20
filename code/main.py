@@ -42,7 +42,7 @@ elif choice==2:
 elif choice==3:
     imagenumber = int(input("Please Refer to the images in car parking folder. Enter a test image between 1 to 7.\n"))
     imgpath = f"CAR PARKING\\{imagenumber}.png"
-    parking.parkingFunction()
+    parking.parkingFunction(imgpath)
 elif choice==4:
     number = int(input("Enter how many numbers you are going to enter.\n"))
     for i in range(number):
@@ -106,10 +106,10 @@ elif choice==7:
     cv2.destroyAllWindows()    
 
 elif choice==8:
-    burglarchoice = int(input("We have only two input images for this model. Enter 1 for image without burglar. Enter 0 for image without burglar."))
-    choice = ["images/wall.webp","images/walltest.jpg"]
+    burglarchoice = int(input("We have only two input images for this model. Enter 1 for image with burglar. Enter 0 for image without burglar."))
+    choice = ["SmartAICamera\\images\\wall.webp","SmartAICamera\\images\\walltest.jpg"]
     # Load the image
-    image = cv2.imread('images/walltest.jpg')
+    image = cv2.imread(choice[burglarchoice])
     print(image.shape)
     # Define the four corner points of the region to crop (in the original image)
     # coordinates: [(top-left), (top-right), (bottom-right), (bottom-left)]

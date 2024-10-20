@@ -3,7 +3,7 @@ from ultralytics import YOLO
 def essentialfeatures(frame):
           
     
-    model = YOLO("models/essential.pt")
+    model = YOLO("SmartAICamera\\models\\essential.pt")
     results = model(frame) # Passing frame to model
     for result in results:  # Loop through each detected object
             boxes = result.boxes  # get the boxes attribute

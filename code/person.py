@@ -5,7 +5,7 @@ import datetime
 import time
 
 # Load the YOLOv11 model for persons detection
-model = YOLO("models\\yolo11n.pt")  
+model = YOLO("SmartAICamera\\models\\yolo11n.pt")  
 # Define the action to be taken when a person is detected
 def person_detected_action():
     print("Person detected!")

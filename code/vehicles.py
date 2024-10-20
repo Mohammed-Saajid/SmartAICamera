@@ -62,7 +62,7 @@ def enforce_string_format(input_string):
 def vehicle(Frame):
     
     # Loading the vehicle detection model.
-    vehicleModel = YOLO("models/vehicles.pt")
+    vehicleModel = YOLO("SmartAICamera\\models\\vehicles.pt")
     # Passing the frame to the model to obtain predictions        
     results = vehicleModel(Frame)
 
@@ -81,7 +81,7 @@ def vehicle(Frame):
     
     
     # Loading the number Plate Model
-    numberPlateModel = YOLO("models/numberplatemodel.pt")
+    numberPlateModel = YOLO("SmartAICamera\\models\\numberplatemodel.pt")
    
     # Ensure the coordinates are within the image boundaries
     x1 = max(0, x1)
@@ -179,7 +179,7 @@ def enterVehicleDB(vehiclenumber):
 if __name__ == "__main__":
 
     # Replace the file name with your test image
-    imgg = cv2.imread("vehicletest.jpg")         
+    imgg = cv2.imread("C:\\Users\\admin\\Downloads\\car.webp")         
     vehicle(imgg)
             
 

@@ -2,7 +2,7 @@ from ultralytics import YOLO
 import pyttsx3
 engine = pyttsx3.init()
 
-model = YOLO("topview.pt")
+model = YOLO("SmartAICamera\models\\topview.pt")
 # Text to speech
 def text_to_speech(text):
             
